@@ -51,6 +51,7 @@
     <Compile Include="weapon\warhead\base class.cs" />
     <Compile Include="weapon\warhead\digger.cs" />
     <Compile Include="weapon\warhead\lbomb.cs" />
+    <Compile Include="weapon\warhead\splitter.cs" />
     <Compile Include="weapon\warhead\square.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>

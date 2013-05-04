@@ -29,6 +29,7 @@ namespace SCORCH
             this.button_square.Click += new EventHandler(button_square_Click);
             this.button_tracer.Click += new EventHandler(button_tracer_Click);
             this.button_lbomb.Click += new EventHandler(button_lbomb_Click);
+            this.button_spread.Click += new EventHandler(button_spread_Click);
 
             bitmap = new Bitmap(36, 16);
 
@@ -53,6 +54,11 @@ namespace SCORCH
             timer = new Timer();
             timer.Interval = 50;
             timer.Tick += new EventHandler(timer_Tick);
+        }
+
+        void button_spread_Click(object sender, EventArgs e)
+        {
+            this.pictureBox1.AddProjectile(new weapon.spread(typeof(weapon.square)), 20, bitmap.Height - 20, 10, 10, 0, -9.8);
         }
 
         void button_lbomb_Click(object sender, EventArgs e)

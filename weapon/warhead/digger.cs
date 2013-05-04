@@ -22,20 +22,20 @@ namespace SCORCH.weapon
             charges--;
             trigger = rand.NextDouble() * 20.0 + 20.0;
 
-            if (rand.Next(0, 2) == 0) Host.vx += 30.0;
-            else Host.vx -= 30.0;
-            Host.vy = 0.0;
+            if (rand.Next(0, 2) == 0) Projectile.vx += 30.0;
+            else Projectile.vx -= 30.0;
+            Projectile.vy = 0.0;
 
             warhead explosion = (warhead)(subwarhead.GetConstructor(new Type[] { }).Invoke(new object[] { }));
             explosion.Trigger = 0.0;
-            this.Host.window.AddProjectile(explosion, Host.x, Host.y, -Host.vx, Host.vy, Host.ax, Host.ay);
+            this.Projectile.window.AddProjectile(explosion, Projectile.x, Projectile.y, -Projectile.vx, Projectile.vy, Projectile.ax, Projectile.ay);
 
             if (charges > 0 && rand.Next(0,3)==0)
             {
                 digger clone = (digger)this.Clone();
                 clone.charges = rand.Next(0, charges);
                 charges -= clone.charges;
-                this.Host.window.AddProjectile(clone, Host.x, Host.y, -Host.vx, Host.vy, Host.ax, Host.ay);
+                this.Projectile.window.AddProjectile(clone, Projectile.x, Projectile.y, -Projectile.vx, Projectile.vy, Projectile.ax, Projectile.ay);
             }
 
             return charges < 1;

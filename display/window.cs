@@ -61,6 +61,13 @@ namespace SCORCH.display
             projectiles.Add(p);
             this.Invalidate(new Rectangle((int)Math.Round(x) - 2, (int)Math.Round(y) - 2, 5, 5));
         }
+        public void AddProjectile(weapon.warhead warhead, bool hasspread, double x, double y, double vx, double vy, double ax, double ay)
+        {
+            weapon.projectile p = new weapon.projectile(this, warhead, landscapecolor, x, y, vx, vy, ax, ay);
+            p.hasspread = hasspread;
+            projectiles.Add(p);
+            this.Invalidate(new Rectangle((int)Math.Round(x) - 2, (int)Math.Round(y) - 2, 5, 5));
+        }
 
         protected override void OnPaint(System.Windows.Forms.PaintEventArgs pevent)
         {

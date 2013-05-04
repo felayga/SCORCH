@@ -34,8 +34,8 @@ namespace SCORCH.weapon
                             xpoint += move;
                             ypoint += move;
                         }
-                        Host.vx += rand.Next(-1, 1) * 1.0;
-                        Host.vy += rand.Next(-1, 1) * 1.0;               
+                        Projectile.vx += rand.Next(-1, 1) * 1.0;
+                        Projectile.vy += rand.Next(-1, 1) * 1.0;               
                 }
             }
             return count<0;

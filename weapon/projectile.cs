@@ -20,7 +20,7 @@ namespace SCORCH.weapon
             this.window = window;
 
             this.warhead = warhead;
-            warhead.Host = this;
+            warhead.Projectile = this;
 
             this.landscapecolor = landscapecolor;
             this.x = x;
@@ -30,6 +30,15 @@ namespace SCORCH.weapon
             this.ax = ax;
             this.ay = ay;
         }
+
+        ~projectile()
+        {
+            window = null;
+            warhead = null;
+            wrapper = null;
+        }
+
+        protected internal bool hasspread = false;
 
         public void update(double secondfraction)
         {
@@ -54,6 +63,20 @@ namespace SCORCH.weapon
 
                 double xstep = (double)newx - (double)oldx;
                 double ystep = (double)newy - (double)oldy;
+
+                if (!hasspread && vy < 0.0)
+                {
+                    Random rand = new Random();
+                    hasspread = true;
+                    warhead[] spread = warhead.Spread();
+                    if (spread != null)
+                    {
+                        for (int n = 0; n < spread.Length; n++)
+                        {
+                            window.AddProjectile(spread[n], true, x, y, vx + (rand.NextDouble() - 0.5)*10.0, vy + (rand.NextDouble() - 0.5)*10.0, ax, ay);
+                        }
+                    }
+                }
 
                 if (Math.Abs(xstep) < Math.Abs(ystep))
                 {
@@ -131,7 +154,7 @@ namespace SCORCH.weapon
 
             uint pixel = wrapper.GetPixel(x, y);
             wrapper.SetPixel(x, y, 255);
-            Console.WriteLine("x=" + x + " y=" + y);
+            //Console.WriteLine("x=" + x + " y=" + y);
             if (pixel != landscapecolor) return false;
 
             _impacttest(ref vx);

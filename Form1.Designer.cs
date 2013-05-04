@@ -34,6 +34,7 @@
             this.button_square = new System.Windows.Forms.Button();
             this.button_tracer = new System.Windows.Forms.Button();
             this.button_lbomb = new System.Windows.Forms.Button();
+            this.button_spread = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -92,11 +93,21 @@
             this.button_lbomb.Text = "lbomb";
             this.button_lbomb.UseVisualStyleBackColor = true;
             // 
+            // button_spread
+            // 
+            this.button_spread.Location = new System.Drawing.Point(617, 170);
+            this.button_spread.Name = "button_spread";
+            this.button_spread.Size = new System.Drawing.Size(75, 23);
+            this.button_spread.TabIndex = 6;
+            this.button_spread.Text = "spread";
+            this.button_spread.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(715, 576);
+            this.Controls.Add(this.button_spread);
             this.Controls.Add(this.button_lbomb);
             this.Controls.Add(this.button_tracer);
             this.Controls.Add(this.button_square);
@@ -118,6 +129,7 @@
         private System.Windows.Forms.Button button_square;
         private System.Windows.Forms.Button button_tracer;
         private System.Windows.Forms.Button button_lbomb;
+        private System.Windows.Forms.Button button_spread;
     }
 }
 
