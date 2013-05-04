@@ -58,7 +58,7 @@ namespace SCORCH
 
         void button_spread_Click(object sender, EventArgs e)
         {
-            this.pictureBox1.AddProjectile(new weapon.spread(typeof(weapon.square)), 20, bitmap.Height - 20, 10, 10, 0, -9.8);
+            this.pictureBox1.AddProjectile(new weapon.splitter(typeof(weapon.square)), 20, bitmap.Height - 20, 10, 10, 0, -9.8);
         }
 
         void button_lbomb_Click(object sender, EventArgs e)

@@ -5,10 +5,10 @@ using System.Text;
 
 namespace SCORCH.weapon
 {
-    public class spread : warhead
+    public class splitter : warhead
     {
         Type subwarhead;
-        public spread(Type subwarhead)
+        public splitter(Type subwarhead)
         {
             trigger = 40.0;
             this.subwarhead = subwarhead;
@@ -34,7 +34,7 @@ namespace SCORCH.weapon
 
         public override warhead Clone()
         {
-            return new digger(subwarhead);
+            return new splitter(subwarhead);
         }
     }
 }
